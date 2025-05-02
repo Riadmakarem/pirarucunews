@@ -3,21 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PirarucuNews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PirarucuNews - O Portal do que Está Bombando</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <header>
+        <div class="logo-container">
+            <div class="mascote-container">
+                <img src="assets/2 de mai. de 2025, 14_05_13.png" alt="Mascote PirarucuNews" id="mascote">
+            </div>
+            <div class="title-container">
+                <h1>PirarucuNews</h1>
+                <p class="slogan">O Portal do que Está Bombando na Amazônia</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Cultura</a></li>
+                <li><a href="#">Música</a></li>
+                <li><a href="#">Subúrbio</a></li>
+                <li><a href="#">Esportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
         <div class="main">
-            <h1>PirarucuNews</h1>
             <h2>O que está acontecendo hoje?</h2>
             <div class="category-section">
                 <div class="category">
                     <img src="https://via.placeholder.com/300x100?text=Cultura" alt="Cultura">
                     <h3>Cultura</h3>
                     <div class="news-list">
-                        <section class="noticia">
+                        <section class="noticia bombando">
+                            <div class="selo">BOMBANDO</div>
                             <h3>🎨 Museu transforma mausoléu da ditadura em espaço cultural no Ceará</h3>
                             <p>O mausoléu do general Castelo Branco será convertido em centro cultural, com exposições
                                 sobre a ditadura e a Amazônia.</p>
@@ -44,14 +66,16 @@
                     <img src="https://via.placeholder.com/300x100?text=Música" alt="Música">
                     <h3>Música</h3>
                     <div class="news-list">
-                        <section class="noticia">
-                            <h3>🎤 Racionais MC’s homenageados com exposição no Museu das Favelas</h3>
+                        <section class="noticia urgente">
+                            <div class="selo">URGENTE</div>
+                            <h3>🎤 Racionais MC's homenageados com exposição no Museu das Favelas</h3>
                             <p>Grupo de rap é tema de exposição em SP, destacando sua importância social e cultural nas
                                 periferias.</p>
                             <a href="https://elpais.com/america/2025-03-24/racionais-la-banda-de-rap-que-inyecto-autoestima-en-las-favelas-de-brasil.html?utm_source=chatgpt.com"
                                 target="_blank">Leia mais</a>
                         </section>
-                        <section class="noticia">
+                        <section class="noticia trending">
+                            <div class="selo">TRENDING</div>
                             <h3>📈 Mercado fonográfico brasileiro cresce 21,7% em 2024</h3>
                             <p>Brasil mantém posição entre os 10 maiores mercados do mundo, com R$ 3,4 bilhões em
                                 faturamento.</p>
@@ -59,7 +83,7 @@
                                 target="_blank">Leia mais</a>
                         </section>
                         <section class="noticia">
-                            <h3>🎬 Filme ‘Ainda Estou Aqui’ arrecada R$ 180 milhões mundialmente</h3>
+                            <h3>🎬 Filme 'Ainda Estou Aqui' arrecada R$ 180 milhões mundialmente</h3>
                             <p>Filme nacional ultrapassa US$ 30 milhões em bilheteira global, figurando no top 100 de
                                 2024.</p>
                             <a href="https://cbn.globo.com/cultura/?utm_source=chatgpt.com" target="_blank">Leia
@@ -71,7 +95,8 @@
                     <img src="https://via.placeholder.com/300x100?text=Subúrbio" alt="Subúrbio">
                     <h3>Subúrbio</h3>
                     <div class="news-list">
-                        <section class="noticia">
+                        <section class="noticia urgente">
+                            <div class="selo">URGENTE</div>
                             <h3>🚨 Violência atinge subúrbio de Salvador com múltiplos ataques</h3>
                             <p>Jovem é morto e três pessoas são feridas no bairro Fazenda Coutos; transporte público é
                                 impactado.</p>
@@ -113,13 +138,32 @@
 
             <div class="ultimas">
                 <h2>Últimas Notícias</h2>
-                <div>Notícia A</div>
-                <div>Notícia B</div>
-                <div>Notícia C</div>
-                <div>Notícia D</div>
+                <div>Festival de Parintins anuncia data para 2025</div>
+                <div>Tucupi ganha reconhecimento internacional na gastronomia</div>
+                <div>Boi Garantido promete inovações para próximo festival</div>
+                <div>Carimbó é declarado patrimônio cultural imaterial</div>
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="pirarucu-mascote-small.png" alt="PirarucuNews" width="60">
+                <p>PirarucuNews &copy; 2025</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
