@@ -1,14 +1,24 @@
 :root {
-    --verde-escuro: #1C3F32; /* Verde Amazônico Escuro */
-    --verde-folha: #4F7F6F;  /* Verde Folha Suave */
-    --bege-jornal: #E1CFA0;  /* Bege Jornal */
-    --marrom-barbatana: #604B3F; /* Marrom Barbatana */
-    --branco-sujo: #F9F8F6;  /* Branco Sujo */
-    --fundo-card: #2b4c3a;   /* Variação do Verde Amazônico para cards */
-    --hover: #3b6c52;        /* Variação do Verde Folha para hover */
-    --vermelho-alerta: #e74c3c; /* Vermelho para selo urgente */
-    --amarelo-trending: #f39c12; /* Amarelo para selo trending */
-    --verde-bombando: #27ae60; /* Verde para selo bombando */
+    --verde-escuro: #1C3F32;
+    /* Verde Amazônico Escuro */
+    --verde-folha: #4F7F6F;
+    /* Verde Folha Suave */
+    --bege-jornal: #E1CFA0;
+    /* Bege Jornal */
+    --marrom-barbatana: #604B3F;
+    /* Marrom Barbatana */
+    --branco-sujo: #F9F8F6;
+    /* Branco Sujo */
+    --fundo-card: #2b4c3a;
+    /* Variação do Verde Amazônico para cards */
+    --hover: #3b6c52;
+    /* Variação do Verde Folha para hover */
+    --vermelho-alerta: #e74c3c;
+    /* Vermelho para selo urgente */
+    --amarelo-trending: #f39c12;
+    /* Amarelo para selo trending */
+    --verde-bombando: #27ae60;
+    /* Verde para selo bombando */
 }
 
 /* Reset básico */
@@ -90,7 +100,8 @@ nav a {
     transition: background-color 0.3s;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
     background-color: var(--hover);
     color: var(--branco-sujo);
 }
@@ -343,23 +354,44 @@ footer {
 
 /* Animações */
 @keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(-20px); }
-    10% { opacity: 1; transform: translateY(0); }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fade {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Balão de mensagem do mascote */
 .balao-mensagem {
     position: absolute;
-    background: var(--branco-sujo);
-    color: var(--verde-escuro);
+    background: var(--verde-escuro);
+    color: var(--branco-sujo);
     padding: 10px 15px;
     border-radius: 20px;
     top: -60px;
@@ -377,7 +409,7 @@ footer {
     left: 30px;
     border-width: 10px 10px 0;
     border-style: solid;
-    border-color: var(--branco-sujo) transparent;
+    border-color: var(--verde-escuro) transparent;
 }
 
 /* Responsividade */
@@ -385,31 +417,31 @@ footer {
     .container {
         flex-direction: column;
     }
-    
+
     .category-section {
         flex-direction: column;
     }
-    
+
     .category {
         margin-bottom: 20px;
     }
-    
+
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-logo {
         margin-bottom: 20px;
         justify-content: center;
     }
-    
+
     .footer-links ul {
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 10px;
     }
-    
+
     .footer-links li {
         margin: 5px 10px;
     }
@@ -420,18 +452,206 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .mascote-container {
         margin-right: 0;
         margin-bottom: 15px;
     }
-    
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     nav li {
         margin: 5px 10px;
     }
+}
+
+/* Estilos para popups */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+}
+
+.popup {
+    background-color: var(--verde-escuro);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.popup.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--bege-jornal);
+}
+
+.popup-content h2 {
+    color: var(--bege-jornal);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.popup-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--branco-sujo);
+}
+
+/* Estilo para formulário de contato */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--bege-jornal);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid var(--bege-jornal);
+    border-radius: 4px;
+    font-family: inherit;
+    background-color: var(--fundo-card);
+    color: var(--branco-sujo);
+}
+
+.contact-form button {
+    background-color: var(--verde-folha);
+    color: var (--branco-sujo);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: var(--hover);
+}
+
+/* Grade de notícias no popup */
+.popup-news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.popup-news-item {
+    border: 1px solid var(--bege-jornal);
+    border-radius: 4px;
+    padding: 15px;
+    background-color: var(--fundo-card);
+    transition: transform 0.2s ease;
+}
+
+.popup-news-item:hover {
+    transform: translateY(-3px);
+    background-color: var(--hover);
+}
+
+.popup-news-item h3 {
+    color: var(--bege-jornal);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Tornar os itens clicáveis visualmente */
+.noticia {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.noticia:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ultimas div:not(h2) {
+    cursor: pointer;
+    padding: 8px 0;
+    border-bottom: 1px solid var (--verde-folha);
+    transition: background-color 0.2s ease;
+}
+
+.ultimas div:not(h2):hover {
+    background-color: var(--hover);
+    padding-left: 5px;
+}
+
+/* Estilo responsivo para o popup */
+@media (max-width: 768px) {
+    .popup-news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adicionando estilo para imagem da notícia no popup */
+.news-image {
+    background-color: var(--verde-folha) !important;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    border-radius: 8px;
+    color: var(--branco-sujo);
+}
+
+/* Ajuste para links dentro dos popups */
+.popup-content a {
+    color: var(--bege-jornal);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.popup-content a:hover {
+    color: var(--branco-sujo);
 }
