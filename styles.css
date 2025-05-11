@@ -394,8 +394,9 @@ footer {
     color: var(--branco-sujo);
     padding: 10px 15px;
     border-radius: 20px;
-    top: -60px;
-    left: 50px;
+    top: 20px;
+    /* Alterado de -60px para 10px */
+    left: 80px;
     max-width: 250px;
     text-align: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -548,7 +549,7 @@ footer {
 
 .form-group label {
     font-weight: bold;
-    color: var(--bege-jornal);
+    color: var (--bege-jornal);
 }
 
 .form-group input,
